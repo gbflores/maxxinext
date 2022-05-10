@@ -6,7 +6,7 @@ async function tempo(request, response){
     const total = ordersResponseJson.total;
     const products = ordersResponseJson.products;
 
-    response.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate')
+    response.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate')
 
     response.json({
         date: dynamicDate.toGMTString(),
