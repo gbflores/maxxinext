@@ -7,7 +7,7 @@ async function dataReturn(request, response){
     const bottomproducts = dataResponseJson.bottomproducts;
     const banners = dataResponseJson.banners;
 
-    response.setHeader('Cache-Control', 's-maxage=1800, stale-while-revalidate')
+    response.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate')
 
     response.json({
         date: dynamicDate.toGMTString(),
