@@ -1,7 +1,7 @@
 async function dataReturn(request, response){
     const dynamicDate = new Date();
 
-    const dataResponse = await fetch("https://maxxieconomica.com/api/home?apiSecret=c6f61777-1a4b-4d17-832e-41a804f95a7d");
+    const dataResponse = await fetch("https://maxxieconomica.com/api/json-api/home?apiSecret=c6f61777-1a4b-4d17-832e-41a804f95a7d");
     const dataResponseJson = await dataResponse.json();
     const topproducts = dataResponseJson.topproducts;
     const bottomproducts = dataResponseJson.bottomproducts;
@@ -16,4 +16,5 @@ async function dataReturn(request, response){
         banners: banners
     });
 }
+
 export default dataReturn;
