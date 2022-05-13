@@ -6,6 +6,7 @@ async function dataReturn(request, response){
     const topproducts = dataResponseJson.topproducts;
     const bottomproducts = dataResponseJson.bottomproducts;
     const banners = dataResponseJson.banners;
+    const promoproducts = dataResponseJson.promoproducts;
 
     response.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate')
 
@@ -13,7 +14,8 @@ async function dataReturn(request, response){
         date: dynamicDate.toGMTString(),
         topproducts: topproducts,
         bottomproducts: bottomproducts,
-        banners: banners
+        banners: banners,
+        promoproducts: promoproducts
     });
 }
 
