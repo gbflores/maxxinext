@@ -1,4 +1,4 @@
-async function dataReturn(request, response){
+async function dataReturn(request, response) {
     const dynamicDate = new Date();
 
     const dataResponse = await fetch("https://maxxieconomica.com/api/json-api/home?apiSecret=c6f61777-1a4b-4d17-832e-41a804f95a7d");
@@ -7,6 +7,7 @@ async function dataReturn(request, response){
     const bottomproducts = dataResponseJson.bottomproducts;
     const banners = dataResponseJson.banners;
     const promoproducts = dataResponseJson.promoproducts;
+    const tenaproducts = dataResponseJson.tenaproducts;
 
     response.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate')
 
@@ -15,7 +16,8 @@ async function dataReturn(request, response){
         topproducts: topproducts,
         bottomproducts: bottomproducts,
         banners: banners,
-        promoproducts: promoproducts
+        promoproducts: promoproducts,
+        tenaproducts: tenaproducts
     });
 }
 

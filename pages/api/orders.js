@@ -1,17 +1,15 @@
-async function tempo(request, response){
+async function tempo(request, response) {
     const dynamicDate = new Date();
 
-    const ordersResponse = await fetch("https://maxxieconomica.com/api/json-api/1");
-    const ordersResponseJson = await ordersResponse.json();
-    const total = ordersResponseJson.total;
-    const products = ordersResponseJson.products;
+    const dataResponse = await fetch("https://maxxieconomica.com/api/json-api/orders?apiSecret=c6f61777-1a4b-4d17-832e-41a804f95a7d");
+    const dataResponseJson = await dataResponse.json();
+    const orders = dataResponseJson.orders;
 
     response.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate')
 
     response.json({
         date: dynamicDate.toGMTString(),
-        products: products,
-        total: total
+        orders: orders
     });
 }
 //https://maxxieconomica.com/api/status-pedidos/1
