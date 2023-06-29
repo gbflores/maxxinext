@@ -8,6 +8,7 @@ async function dataReturn(request, response) {
     const banners = dataResponseJson.banners;
     const promoproducts = dataResponseJson.promoproducts;
     const tenaproducts = dataResponseJson.tenaproducts;
+    const carmedproducts = dataResponseJson.carmedproducts;
 
     response.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate')
 
@@ -17,7 +18,8 @@ async function dataReturn(request, response) {
         bottomproducts: bottomproducts,
         banners: banners,
         promoproducts: promoproducts,
-        tenaproducts: tenaproducts
+        tenaproducts: tenaproducts,
+        carmedproducts: carmedproducts
     });
 }
 
