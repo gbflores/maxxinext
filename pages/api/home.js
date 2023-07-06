@@ -9,6 +9,7 @@ async function dataReturn(request, response) {
     const promoproducts = dataResponseJson.promoproducts;
     const tenaproducts = dataResponseJson.tenaproducts;
     const carmedproducts = dataResponseJson.carmedproducts;
+    const biolabproducts = dataResponseJson.biolabproducts;
 
     response.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate')
 
@@ -19,7 +20,8 @@ async function dataReturn(request, response) {
         banners: banners,
         promoproducts: promoproducts,
         tenaproducts: tenaproducts,
-        carmedproducts: carmedproducts
+        carmedproducts: carmedproducts,
+        biolabproducts: biolabproducts,
     });
 }
 
